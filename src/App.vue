@@ -137,10 +137,33 @@ const fetchServers = async () => {
   }
 }
 
+const mapImageMapping = {
+  'mp_angel_city': '/image/maps/TF_AngelCity_Loadscreen.jpg',
+  'mp_black_water_canal': '/image/maps/TF_BlackWaterCanal_Loadscreen.jpg',
+  'mp_coliseum': '/image/maps/TF_Coliseum_Loadscreen.jpg',
+  'mp_colony02': '/image/maps/TF_Colony_Loadscreen.jpg',
+  'mp_complex3': '/image/maps/TF_Complex_Loadscreen.jpg',
+  'mp_crashsite3': '/image/maps/TF_Crashsite_Loadscreen.jpg',
+  'mp_drydock': '/image/maps/TF_Drydock_Loadscreen.jpg',
+  'mp_eden': '/image/maps/TF_Eden_Loadscreen.jpg',
+  'mp_forwardbase_kodai': '/image/maps/TF_ForwardBaseKodai_Loadscreen.jpg',
+  'mp_glitch': '/image/maps/TF_Glitch_Loadscreen.jpg',
+  'mp_grave': '/image/maps/TF_Grave_Loadscreen.jpg',
+  'mp_homestead': '/image/maps/TF_Homestead_Loadscreen.jpg',
+  'mp_lf_deck': '/image/maps/TF_LFDeck_Loadscreen.jpg',
+  'mp_lf_meadow': '/image/maps/TF_LFMeadow_Loadscreen.jpg',
+  'mp_lf_stacks': '/image/maps/TF_LFStacks_Loadscreen.jpg',
+  'mp_lf_township': '/image/maps/TF_LFTownship_Loadscreen.jpg',
+  'mp_lf_traffic': '/image/maps/TF_LFTraffic_Loadscreen.jpg',
+  'mp_lf_uma': '/image/maps/TF_LFUMA_Loadscreen.jpg',
+  'mp_relic02': '/image/maps/TF_Relic_Loadscreen.jpg',
+  'mp_rise': '/image/maps/TF_Rise_Loadscreen.jpg',
+  'mp_thaw': '/image/maps/TF_Thaw_Loadscreen.jpg',
+  'mp_wargames': '/image/maps/TF_Wargames_Loadscreen.jpg'
+}
+
 const getMapImage = (mapName) => {
-  const mapPrefix = mapName.toLowerCase().startsWith('mp_') ? 'TF_' : ''
-  const mapSuffix = mapName.replace('mp_', '').replace(/_/g, '')
-  return `/src/assets/image/maps/${mapPrefix}${mapSuffix}_Loadscreen.jpg`
+  return mapImageMapping[mapName.toLowerCase()] || '/image/maps/default_map.jpg'
 }
 
 const copyConnectCommand = async (server) => {
