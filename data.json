@@ -1,0 +1,711 @@
+[
+    {
+        "host_name": "[GB] Lexi's Possession attrition",
+        "map_name": "mp_zone_18",
+        "game_mode": "at",
+        "max_players": 16,
+        "description": ":O discord.gg/FDFNuCRjuZ Killing somone gives their loadout | increased playercount | increased scorelimit",
+        "playlist": "at",
+        "playlist_display_name": "#PL_attrition",
+        "has_password": false,
+        "total_players": 13,
+        "ip": "84.67.116.252",
+        "version": "v2.3.4",
+        "port": 37022,
+        "players": [
+            {
+                "name": "SMLNDY",
+                "gen": 0,
+                "lvl": 31,
+                "team": 2
+            },
+            {
+                "name": "Bee",
+                "gen": 0,
+                "lvl": 1,
+                "team": 2
+            },
+            {
+                "name": "Playj17",
+                "gen": 0,
+                "lvl": 34,
+                "team": 3
+            },
+            {
+                "name": "OTPBytube_NiM",
+                "gen": 0,
+                "lvl": 30,
+                "team": 3
+            },
+            {
+                "name": "Giagia",
+                "gen": 0,
+                "lvl": 40,
+                "team": 2
+            },
+            {
+                "name": "picklez_sam",
+                "gen": 0,
+                "lvl": 12,
+                "team": 2
+            },
+            {
+                "name": "FlyeurBan",
+                "gen": 0,
+                "lvl": 5,
+                "team": 2
+            },
+            {
+                "name": "shunshun",
+                "gen": 0,
+                "lvl": 6,
+                "team": 2
+            },
+            {
+                "name": "Lannerstrom",
+                "gen": 0,
+                "lvl": 43,
+                "team": 2
+            },
+            {
+                "name": "Cerbultubage99",
+                "gen": 0,
+                "lvl": 18,
+                "team": 3
+            },
+            {
+                "name": "yNikxz",
+                "gen": 0,
+                "lvl": 2,
+                "team": 3
+            },
+            {
+                "name": "SirSchwenker",
+                "gen": 0,
+                "lvl": 6,
+                "team": 3
+            },
+            {
+                "name": "Legislative",
+                "gen": 0,
+                "lvl": 14,
+                "team": 3
+            }
+        ],
+        "validated": true
+    },
+    {
+        "host_name": "[GB] Lexi's Tf1 Server Campaign",
+        "map_name": "mp_relic",
+        "game_mode": "at",
+        "max_players": 12,
+        "description": ":O discord: discord.gg/FDFNuCRjuZ",
+        "playlist": "campaign_carousel",
+        "playlist_display_name": "#PL_campaign",
+        "has_password": false,
+        "total_players": 12,
+        "ip": "84.67.116.252",
+        "version": "v2.3.2",
+        "port": 37017,
+        "players": [
+            {
+                "name": "AsTiClol",
+                "gen": 0,
+                "lvl": 21,
+                "team": 2
+            },
+            {
+                "name": "Liku",
+                "gen": 0,
+                "lvl": 19,
+                "team": 2
+            },
+            {
+                "name": "RedOne",
+                "gen": 0,
+                "lvl": 18,
+                "team": 2
+            },
+            {
+                "name": "bessovestny",
+                "gen": 0,
+                "lvl": 4,
+                "team": 3
+            },
+            {
+                "name": "De4thKn1ght",
+                "gen": 0,
+                "lvl": 11,
+                "team": 3
+            },
+            {
+                "name": "lilyxwx",
+                "gen": 0,
+                "lvl": 14,
+                "team": 2
+            },
+            {
+                "name": "Rogue",
+                "gen": 0,
+                "lvl": 38,
+                "team": 2
+            },
+            {
+                "name": "Spectre",
+                "gen": 0,
+                "lvl": 48,
+                "team": 2
+            },
+            {
+                "name": "Craig_the_brute",
+                "gen": 0,
+                "lvl": 45,
+                "team": 3
+            },
+            {
+                "name": "Pessky_Parrot",
+                "gen": 0,
+                "lvl": 10,
+                "team": 3
+            },
+            {
+                "name": "MaXxou",
+                "gen": 0,
+                "lvl": 27,
+                "team": 3
+            },
+            {
+                "name": "Beakfast9129",
+                "gen": 0,
+                "lvl": 15,
+                "team": 3
+            }
+        ],
+        "validated": true
+    },
+    {
+        "host_name": "[CN] HK560's server",
+        "map_name": "mp_lagoon",
+        "game_mode": "cp",
+        "max_players": 12,
+        "description": "Enjoy yourself :)  || Guangzhou 2C2G Server || Search HK560 on Bilibili || elbadaernu.com || NorthStarCN",
+        "playlist": "all",
+        "playlist_display_name": "#PL_variety_pack",
+        "has_password": false,
+        "total_players": 10,
+        "ip": "119.29.139.175",
+        "version": "v2.2.5",
+        "port": 27015,
+        "players": [
+            {
+                "name": "gkrrdezz",
+                "gen": 0,
+                "lvl": 12,
+                "team": 2
+            },
+            {
+                "name": "Z9",
+                "gen": 0,
+                "lvl": 22,
+                "team": 3
+            },
+            {
+                "name": "ELLCE",
+                "gen": 0,
+                "lvl": 47,
+                "team": 3
+            },
+            {
+                "name": "trigger",
+                "gen": 0,
+                "lvl": 1,
+                "team": 3
+            },
+            {
+                "name": "Newbie",
+                "gen": 0,
+                "lvl": 24,
+                "team": 2
+            },
+            {
+                "name": "Wetmaster",
+                "gen": 0,
+                "lvl": 4,
+                "team": 2
+            },
+            {
+                "name": "TheCounterWolf",
+                "gen": 0,
+                "lvl": 24,
+                "team": 2
+            },
+            {
+                "name": "lunalunalunaluna",
+                "gen": 0,
+                "lvl": 11,
+                "team": 3
+            },
+            {
+                "name": "Rebirth",
+                "gen": 0,
+                "lvl": 43,
+                "team": 2
+            },
+            {
+                "name": "Tsdgh",
+                "gen": 0,
+                "lvl": 33,
+                "team": 3
+            }
+        ],
+        "validated": true
+    },
+    {
+        "host_name": "[CN] CN__SL_ R1Server",
+        "map_name": "mp_fracture",
+        "game_mode": "tdm",
+        "max_players": 16,
+        "description": "!",
+        "playlist": "tdm",
+        "playlist_display_name": "#PL_pilot_hunter",
+        "has_password": false,
+        "total_players": 4,
+        "ip": "101.43.27.30",
+        "version": "v2.3.2",
+        "port": 37020,
+        "players": [
+            {
+                "name": "yjk88967",
+                "gen": 0,
+                "lvl": 11,
+                "team": 3
+            },
+            {
+                "name": "CUTETIRPIZ",
+                "gen": 0,
+                "lvl": 8,
+                "team": 3
+            },
+            {
+                "name": "78",
+                "gen": 0,
+                "lvl": 37,
+                "team": 2
+            },
+            {
+                "name": "ni",
+                "gen": 0,
+                "lvl": 44,
+                "team": 3
+            }
+        ],
+        "validated": true
+    },
+    {
+        "host_name": "[US] bob.bmp's Frontier Defense Server",
+        "map_name": "mp_swampland",
+        "game_mode": "coop",
+        "max_players": 4,
+        "description": "",
+        "playlist": "coop",
+        "playlist_display_name": "#PL_coop",
+        "has_password": false,
+        "total_players": 4,
+        "ip": "76.100.242.17",
+        "version": "v2.2.3",
+        "port": 27015,
+        "players": [
+            {
+                "name": "Fredrich",
+                "gen": 0,
+                "lvl": 7,
+                "team": 3
+            },
+            {
+                "name": "Ivorguest1210",
+                "gen": 0,
+                "lvl": 4,
+                "team": 3
+            },
+            {
+                "name": "Blitz",
+                "gen": 1,
+                "lvl": 34,
+                "team": 3
+            },
+            {
+                "name": "Daervorn",
+                "gen": 0,
+                "lvl": 6,
+                "team": 3
+            }
+        ],
+        "validated": true
+    },
+    {
+        "host_name": "[CN] CN__SL_ R1Server",
+        "map_name": "mp_sandtrap",
+        "game_mode": "coop",
+        "max_players": 4,
+        "description": "!",
+        "playlist": "coop",
+        "playlist_display_name": "#PL_coop",
+        "has_password": false,
+        "total_players": 4,
+        "ip": "101.43.27.30",
+        "version": "v2.3.2",
+        "port": 37016,
+        "players": [
+            {
+                "name": "Curtains",
+                "gen": 0,
+                "lvl": 39,
+                "team": 3
+            },
+            {
+                "name": "Angelmin",
+                "gen": 0,
+                "lvl": 35,
+                "team": 3
+            },
+            {
+                "name": "M98-2K",
+                "gen": 0,
+                "lvl": 12,
+                "team": 3
+            },
+            {
+                "name": "114514",
+                "gen": 0,
+                "lvl": 18,
+                "team": 3
+            }
+        ],
+        "validated": true
+    },
+    {
+        "host_name": "[US] Pilot Skirmish",
+        "map_name": "mp_lagoon",
+        "game_mode": "ps",
+        "max_players": 16,
+        "description": "",
+        "playlist": "ps",
+        "playlist_display_name": "#PL_pilot_skirmish",
+        "has_password": false,
+        "total_players": 1,
+        "ip": "68.129.56.106",
+        "version": "v2.3.4",
+        "port": 27015,
+        "players": [
+            {
+                "name": "WeaselPig",
+                "gen": 0,
+                "lvl": 30,
+                "team": 3
+            }
+        ],
+        "validated": true
+    },
+    {
+        "host_name": "[FI] OpenAI Frontier Defense",
+        "map_name": "mp_lobby",
+        "game_mode": "coop",
+        "max_players": 4,
+        "description": "Defend the Frontier from evil distillers(Deepseek).",
+        "playlist": "coop",
+        "playlist_display_name": "#PL_coop",
+        "has_password": false,
+        "total_players": 1,
+        "ip": "157.180.66.225",
+        "version": "v2.3.2",
+        "port": 27015,
+        "players": [
+            {
+                "name": "pitulice",
+                "gen": 0,
+                "lvl": 7,
+                "team": 2
+            }
+        ],
+        "validated": true
+    },
+    {
+        "host_name": "[GB] Lexi's Tf1 Server Att",
+        "map_name": "mp_lobby",
+        "game_mode": "at",
+        "max_players": 12,
+        "description": ":O discord.gg/FDFNuCRjuZ increased playercount increased scorelimit",
+        "playlist": "at",
+        "playlist_display_name": "#PL_attrition",
+        "has_password": false,
+        "total_players": 1,
+        "ip": "84.67.116.252",
+        "version": "v2.3.2",
+        "port": 37032,
+        "players": [
+            {
+                "name": "RoughNewt",
+                "gen": 0,
+                "lvl": 5,
+                "team": 3
+            }
+        ],
+        "validated": true
+    },
+    {
+        "host_name": "[FR] Unnamed R1Delta Server",
+        "map_name": "mp_angel_city",
+        "game_mode": "at",
+        "max_players": 12,
+        "description": "",
+        "playlist": "at",
+        "playlist_display_name": "#PL_attrition",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "90.66.189.70",
+        "version": "v2.3.4",
+        "port": 27016,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[US] mv's awesome Campaign server",
+        "map_name": "mp_lobby",
+        "game_mode": "cp",
+        "max_players": 12,
+        "description": "",
+        "playlist": "campaign_carousel",
+        "playlist_display_name": "#PL_campaign",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "23.148.232.35",
+        "version": "v2.3.1",
+        "port": 27015,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[US] mv's awesome Pilot Skirmish server",
+        "map_name": "mp_lobby",
+        "game_mode": "ps",
+        "max_players": 16,
+        "description": "",
+        "playlist": "ps",
+        "playlist_display_name": "#PL_pilot_skirmish",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "23.148.232.35",
+        "version": "v2.3.1",
+        "port": 27016,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[AU] Sonny's Variety Pack",
+        "map_name": "mp_lobby",
+        "game_mode": "tdm",
+        "max_players": 12,
+        "description": "24/7 Aussie Variety Pack Server, please report bugs in the R1Delta discord!",
+        "playlist": "all",
+        "playlist_display_name": "#PL_variety_pack",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "134.199.157.220",
+        "version": "v2.2.2",
+        "port": 27015,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[RU] fish",
+        "map_name": "mp_outpost_207",
+        "game_mode": "mfdp",
+        "max_players": 12,
+        "description": "if any problems occur please contact @hydr0ponica on discord thanks. sponsored by parimatch.",
+        "playlist": "mfdp",
+        "playlist_display_name": "#PL_marked_for_death_pro",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "37.230.192.71",
+        "version": "v1.9.5",
+        "port": 27015,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[RU] RU OTPB",
+        "map_name": "mp_lobby",
+        "game_mode": "at",
+        "max_players": 14,
+        "description": "Welcome to RU OTPB server",
+        "playlist": "at",
+        "playlist_display_name": "#PL_attrition",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "31.129.131.74",
+        "version": "v2.2.1",
+        "port": 27015,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[RO] mv's awesome Attrition server",
+        "map_name": "mp_lobby",
+        "game_mode": "at",
+        "max_players": 12,
+        "description": "",
+        "playlist": "at",
+        "playlist_display_name": "#PL_attrition",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "79.115.219.16",
+        "version": "v2.2.1",
+        "port": 37015,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[DE] Ersguterjunge",
+        "map_name": "mp_corporate",
+        "game_mode": "at",
+        "max_players": 12,
+        "description": "Frank White jagt euch mit dem BMW",
+        "playlist": "at",
+        "playlist_display_name": "#PL_attrition",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "188.245.59.37",
+        "version": "v2.3.4",
+        "port": 27015,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[RO] mv's awesome Attrition server 2",
+        "map_name": "mp_lobby",
+        "game_mode": "at",
+        "max_players": 12,
+        "description": "",
+        "playlist": "at",
+        "playlist_display_name": "#PL_attrition",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "79.115.219.16",
+        "version": "v2.2.1",
+        "port": 37016,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[US] bob.bmp's Frontier Defense Server 2",
+        "map_name": "mp_lobby",
+        "game_mode": "coop",
+        "max_players": 4,
+        "description": "",
+        "playlist": "coop",
+        "playlist_display_name": "#PL_coop",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "76.100.242.17",
+        "version": "v2.2.3",
+        "port": 27016,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[FI] Call of Delta: Titanfall Ops",
+        "map_name": "mp_lobby",
+        "game_mode": "at",
+        "max_players": 12,
+        "description": "MANUAL SMARTPISTOL | GUIDED ARCHER | NERFED EVA8 | GRENADE-REGEN | NO DOUBLEJUMP/WALLRUNNING/TITANS | HARD GRUNTS | NOT TITANFALL | titanfall.k0.tel | Owned by @koutsie",
+        "playlist": "at",
+        "playlist_display_name": "#PL_attrition",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "5.61.90.203",
+        "version": "v2.3.4",
+        "port": 27015,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[FR] mv's awesome Capture The Flag server",
+        "map_name": "mp_lobby",
+        "game_mode": "ctf",
+        "max_players": 12,
+        "description": "Powered by KFC",
+        "playlist": "ctf",
+        "playlist_display_name": "#PL_capture_the_flag",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "37.187.79.168",
+        "version": "v2.3.4",
+        "port": 27016,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[IL] microwave's Last Titan Standing Server",
+        "map_name": "mp_lobby",
+        "game_mode": "lts",
+        "max_players": 12,
+        "description": "Powered by a steam deck",
+        "playlist": "lts",
+        "playlist_display_name": "#PL_last_titan_standing",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "87.71.219.86",
+        "version": "v2.3.2",
+        "port": 37015,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[FR] mv's awesome Frontier Defense server 2",
+        "map_name": "mp_lobby",
+        "game_mode": "coop",
+        "max_players": 4,
+        "description": "Modded FD | Explosive Kraber and Wingman | Smart Pistol does more Rodeo damage | Icepick and Quick Reload always equipped | Regenerating Grenades | Powered by KFC",
+        "playlist": "coop",
+        "playlist_display_name": "#PL_coop",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "37.187.79.168",
+        "version": "v2.3.4",
+        "port": 27017,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[BG] im losing it fr",
+        "map_name": "mp_swampland",
+        "game_mode": "ps",
+        "max_players": 16,
+        "description": "",
+        "playlist": "ps",
+        "playlist_display_name": "#PL_pilot_skirmish",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "46.10.215.48",
+        "version": "v2.3.2",
+        "port": 27015,
+        "players": [],
+        "validated": true
+    },
+    {
+        "host_name": "[CA] mv's awesome Frontier Defense server",
+        "map_name": "mp_lobby",
+        "game_mode": "coop",
+        "max_players": 4,
+        "description": "Modded FD | Explosive Kraber and Wingman | Smart Pistol does more Rodeo damage | Icepick and Quick Reload always equipped | Regenerating Grenades | Server provided by eukara",
+        "playlist": "coop",
+        "playlist_display_name": "#PL_coop",
+        "has_password": false,
+        "total_players": 0,
+        "ip": "192.99.32.215",
+        "version": "v2.3.1",
+        "port": 27015,
+        "players": [],
+        "validated": true
+    }
+]
