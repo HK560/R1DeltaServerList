@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://ms.r1delta.net/:path*"
+    }
+  ]
+} 
