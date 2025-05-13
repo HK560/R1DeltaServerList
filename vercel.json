@@ -7,6 +7,10 @@
     {
       "source": "/servers",
       "destination": "https://ms.r1delta.net/servers"
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://ms.r1delta.net/:path*"
     }
   ]
 } 
