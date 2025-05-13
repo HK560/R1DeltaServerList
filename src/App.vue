@@ -3,7 +3,7 @@
     <header class="bg-titanfall-secondary shadow-lg">
       <div class="container mx-auto px-4 py-6">
         <h1 class="text-3xl font-bold text-titanfall-accent">
-          {{ $t('serverList.title') }}
+          {{ t('serverList.title') }}
         </h1>
       </div>
     </header>
@@ -15,7 +15,7 @@
             <input
               v-model="searchQuery"
               type="text"
-              :placeholder="$t('serverList.search')"
+              :placeholder="t('serverList.search')"
               class="w-full px-4 py-2 rounded-lg bg-titanfall-secondary border border-gray-700 focus:border-titanfall-accent focus:outline-none"
             />
           </div>
@@ -31,7 +31,7 @@
                   : 'bg-titanfall-secondary hover:bg-gray-700'
               ]"
             >
-              {{ $t(`serverList.filter.${mode.value}`) }}
+              {{ t(`serverList.filter.${mode.value}`) }}
             </button>
           </div>
         </div>
@@ -57,19 +57,19 @@
           <div class="p-6 space-y-4 flex-grow flex flex-col">
             <div class="space-y-2">
               <p class="flex justify-between">
-                <span class="text-gray-400">{{ $t('serverList.status.players') }}:</span>
+                <span class="text-gray-400">{{ t('serverList.status.players') }}:</span>
                 <span>{{ server.total_players }}/{{ server.max_players }}</span>
               </p>
               <p class="flex justify-between">
-                <span class="text-gray-400">{{ $t('serverList.status.map') }}:</span>
-                <span>{{ server.map_name }}</span>
+                <span class="text-gray-400">{{ t('serverList.status.map') }}:</span>
+                <span>{{ t(`serverList.map.${server.map_name}`) }}</span>
               </p>
               <p class="flex justify-between">
-                <span class="text-gray-400">{{ $t('serverList.status.mode') }}:</span>
-                <span>{{ $t(`serverList.filter.${server.game_mode}`) }}</span>
+                <span class="text-gray-400">{{ t('serverList.status.mode') }}:</span>
+                <span>{{ t(`serverList.filter.${server.game_mode}`) }}</span>
               </p>
               <p class="flex justify-between">
-                <span class="text-gray-400">{{ $t('serverList.status.version') }}:</span>
+                <span class="text-gray-400">{{ t('serverList.status.version') }}:</span>
                 <span>{{ server.version }}</span>
               </p>
               <div class="flex items-center justify-between mb-2">
@@ -86,11 +86,9 @@
                 </div>
             </div>
             
-
-
-              <div class="overflow-y-auto flex-grow border-t border-gray-700 py-2">
-                  <p class="text-sm text-gray-400">{{ server.description }}</p>
-                </div>
+            <div class="overflow-y-auto flex-grow border-t border-gray-700 py-2">
+              <p class="text-sm text-gray-400">{{ server.description }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -98,18 +96,23 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import axios from 'axios'
+import type { Server, GameMode, GameModeOption } from './types'
+import { mapImageMapping } from './data/data'
 
-const servers = ref([])
+const { t } = useI18n()
+
+const servers = ref<Server[]>([])
 const searchQuery = ref('')
-const selectedMode = ref('all')
+const selectedMode = ref<GameMode>('all')
 const copiedServer = ref('')
 
-const gameModes = [
+const gameModes: GameModeOption[] = [
   { value: 'all', label: 'All' },
-  { value: 'attrition', label: 'Attrition' },
+  { value: 'at', label: 'Attrition' },
   { value: 'campaign', label: 'Campaign' },
   { value: 'coop', label: 'Co-op' },
   { value: 'ctf', label: 'Capture the Flag' },
@@ -128,45 +131,20 @@ const filteredServers = computed(() => {
   })
 })
 
-const fetchServers = async () => {
+const fetchServers = async (): Promise<void> => {
   try {
-    const response = await axios.get('/api/servers')
+    const response = await axios.get<Server[]>('/api/servers')
     servers.value = response.data
   } catch (error) {
     console.error('Error fetching servers:', error)
   }
 }
 
-const mapImageMapping = {
-  'mp_angel_city': '/image/maps/TF_AngelCity_Loadscreen.jpg',
-  'mp_black_water_canal': '/image/maps/TF_BlackWaterCanal_Loadscreen.jpg',
-  'mp_coliseum': '/image/maps/TF_Coliseum_Loadscreen.jpg',
-  'mp_colony02': '/image/maps/TF_Colony_Loadscreen.jpg',
-  'mp_complex3': '/image/maps/TF_Complex_Loadscreen.jpg',
-  'mp_crashsite3': '/image/maps/TF_Crashsite_Loadscreen.jpg',
-  'mp_drydock': '/image/maps/TF_Drydock_Loadscreen.jpg',
-  'mp_eden': '/image/maps/TF_Eden_Loadscreen.jpg',
-  'mp_forwardbase_kodai': '/image/maps/TF_ForwardBaseKodai_Loadscreen.jpg',
-  'mp_glitch': '/image/maps/TF_Glitch_Loadscreen.jpg',
-  'mp_grave': '/image/maps/TF_Grave_Loadscreen.jpg',
-  'mp_homestead': '/image/maps/TF_Homestead_Loadscreen.jpg',
-  'mp_lf_deck': '/image/maps/TF_LFDeck_Loadscreen.jpg',
-  'mp_lf_meadow': '/image/maps/TF_LFMeadow_Loadscreen.jpg',
-  'mp_lf_stacks': '/image/maps/TF_LFStacks_Loadscreen.jpg',
-  'mp_lf_township': '/image/maps/TF_LFTownship_Loadscreen.jpg',
-  'mp_lf_traffic': '/image/maps/TF_LFTraffic_Loadscreen.jpg',
-  'mp_lf_uma': '/image/maps/TF_LFUMA_Loadscreen.jpg',
-  'mp_relic02': '/image/maps/TF_Relic_Loadscreen.jpg',
-  'mp_rise': '/image/maps/TF_Rise_Loadscreen.jpg',
-  'mp_thaw': '/image/maps/TF_Thaw_Loadscreen.jpg',
-  'mp_wargames': '/image/maps/TF_Wargames_Loadscreen.jpg'
-}
-
-const getMapImage = (mapName) => {
+const getMapImage = (mapName: string): string => {
   return mapImageMapping[mapName.toLowerCase()] || '/image/maps/default_map.jpg'
 }
 
-const copyConnectCommand = async (server) => {
+const copyConnectCommand = async (server: Server): Promise<void> => {
   const command = `${server.ip}:${server.port}`
   try {
     await navigator.clipboard.writeText(command)
