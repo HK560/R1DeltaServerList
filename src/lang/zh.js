@@ -1,6 +1,6 @@
 export default {
   serverList: {
-    title: 'R1Delta 服务器列表(本页面开发中)',
+    title: 'R1Delta 服务器列表',
     search: '搜索服务器...',
     filter: {
       all: '全部',
@@ -45,7 +45,15 @@ export default {
       maxPlayers: '最大玩家数',
       map: '地图',
       mode: '模式',
-      version: '版本'
+      version: '版本',
+      address: '地址'
+    },
+    button: {
+      copy: '复制',
+      copied: '已复制'
+    },
+    message: {
+      nodescription: '此服务器无描述🫡'
     }
   }
 }

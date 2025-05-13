@@ -1,12 +1,12 @@
 export default {
   serverList: {
-    title: 'Titanfall Server List',
+    title: 'R1Delta Server List',
     search: 'Search servers...',
     filter: {
       all: 'All',
       at: 'Attrition',
       campaign: 'Campaign',
-      coop: 'Co-op',
+      coop: 'Frontier Defense',
       ctf: 'Capture the Flag',
       lts: 'Last Titan Standing',
       mfdp: 'Marked for Death Pro',
@@ -45,7 +45,15 @@ export default {
       maxPlayers: 'Max Players',
       map: 'Map',
       mode: 'Mode',
-      version: 'Version'
+      version: 'Version',
+      address: 'Address'
+    },
+    button: {
+      copy: 'Copy',
+      copied: 'Copied'
+    },
+    message: {
+      nodescription: 'No description'
     }
   }
 }

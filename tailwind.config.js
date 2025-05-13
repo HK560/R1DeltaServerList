@@ -10,7 +10,8 @@ module.exports = {
         'titanfall': {
           'primary': '#1a1a1a',
           'secondary': '#2d2d2d',
-          'accent': '#ff4655'
+          'accent': '#9A333E',
+          'highlight': '#FF4655'
         }
       }
     },
