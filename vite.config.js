@@ -6,10 +6,10 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/api': {
+      '/r1d-api': {
         target: 'https://ms.r1delta.net',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        rewrite: (path) => path.replace(/^\/r1d-api/, '')
       }
     }
   }

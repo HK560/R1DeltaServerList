@@ -133,7 +133,7 @@ const filteredServers = computed(() => {
 
 const fetchServers = async (): Promise<void> => {
   try {
-    const response = await axios.get<Server[]>('/api/servers')
+    const response = await axios.get<Server[]>('/r1d-api/servers')
     servers.value = response.data
   } catch (error) {
     console.error('Error fetching servers:', error)
