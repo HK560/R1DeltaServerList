@@ -1,14 +1,40 @@
 <template>
-  <div class="min-h-screen bg-titanfall-primary text-white">
+  <div class="min-h-screen bg-titanfall-primary text-white flex flex-col">
     <header class="bg-titanfall-secondary shadow-lg">
       <div class="container mx-auto px-4 py-6">
-        <h1 class="text-3xl font-bold text-titanfall-accent">
-          {{ t('serverList.title') }}
-        </h1>
+        <div class="flex justify-between items-center">
+          <h1 class="text-3xl font-bold text-titanfall-accent">
+            {{ t('serverList.title') }}
+          </h1>
+          <div class="flex gap-2">
+            <button
+              @click="locale = 'zh'"
+              :class="[
+                'px-4 py-2 rounded-lg transition-colors',
+                locale === 'zh'
+                  ? 'bg-titanfall-accent text-white'
+                  : 'bg-titanfall-secondary hover:bg-gray-700'
+              ]"
+            >
+              中文
+            </button>
+            <button
+              @click="locale = 'en'"
+              :class="[
+                'px-4 py-2 rounded-lg transition-colors',
+                locale === 'en'
+                  ? 'bg-titanfall-accent text-white'
+                  : 'bg-titanfall-secondary hover:bg-gray-700'
+              ]"
+            >
+              English
+            </button>
+          </div>
+        </div>
       </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4 py-8 flex-grow">
       <div class="mb-8">
         <div class="flex flex-col md:flex-row gap-4">
           <div class="flex-1">
@@ -93,17 +119,19 @@
         </div>
       </div>
     </main>
+    <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import axios from 'axios'
 import type { Server, GameMode, GameModeOption } from './types'
 import { mapImageMapping } from './data/data'
+import Footer from './components/Footer.vue'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 const servers = ref<Server[]>([])
 const searchQuery = ref('')
