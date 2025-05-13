@@ -1,8 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/api/:path*",
+      "source": "/r1d-api/:path*",
       "destination": "https://ms.r1delta.net/:path*"
+    },
+    {
+      "source": "/servers",
+      "destination": "https://ms.r1delta.net/servers"
     }
   ]
 } 
