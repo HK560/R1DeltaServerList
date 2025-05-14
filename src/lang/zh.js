@@ -15,7 +15,8 @@ export default {
       mfdp: '标记死亡Pro',
       ps: '铁驭对铁驭',
       tdm: '团队死斗',
-      onlyWithPlayers: '有玩家'
+      onlyWithPlayers: '有玩家',
+      allCountries: '所有国家'
     },
     map:{
         mp_airbase: '空军基地',

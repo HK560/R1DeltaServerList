@@ -41,7 +41,6 @@
     <main class="container mx-auto px-4 py-8 flex-grow">
       <div class="mb-8">
         <div class="flex flex-col md:flex-row gap-4">
-
           <div class="flex flex-1 flex-row gap-2" >
             <div class=" text-white min-w-[3rem]">
               <div class="flex items-center gap-2">
@@ -59,8 +58,6 @@
               :placeholder="t('serverList.search')"
               class="w-full px-4 py-2 rounded-lg bg-titanfall-secondary border border-gray-700 focus:border-titanfall-accent focus:outline-none"
             />
-          </div>
-          <div class="flex gap-4 items-center">
             <label class="flex items-center group cursor-pointer">
               <div class="relative">
                 <input
@@ -71,10 +68,23 @@
                 <div class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:bg-titanfall-accent transition-colors duration-200 ease-in-out"></div>
                 <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full peer-checked:translate-x-5 transition-transform duration-200 ease-in-out"></div>
               </div>
-              <span class="ml-3 text-sm text-gray-300 group-hover:text-white transition-colors duration-200 select-none">
-                {{ t('serverList.filter.onlyWithPlayers') }}
-              </span>
+              <span class="ml-3  text-sm text-gray-300 group-hover:text-white transition-colors duration-200 select-none text-nowrap">{{ t('serverList.filter.onlyWithPlayers') }}</span>
             </label>
+          </div>
+          <div class="flex gap-4 items-center justify-center md:justify-start">
+            <select
+              v-model="selectedCountry"
+              class="px-4 py-2 rounded-lg bg-titanfall-secondary border border-gray-700 text-white focus:border-titanfall-accent focus:outline-none transition-colors duration-200"
+            >
+              <option
+                v-for="country in availableCountries"
+                :key="country.value"
+                :value="country.value"
+                class="bg-gray-800 text-white"
+              >
+                {{ country.label }}
+              </option>
+            </select>
             <select
               v-model="selectedMode"
               class="px-4 py-2 rounded-lg bg-titanfall-secondary border border-gray-700 text-white focus:border-titanfall-accent focus:outline-none transition-colors duration-200"
@@ -88,6 +98,7 @@
                 {{ t(`serverList.filter.${mode.value}`) }}
               </option>
             </select>
+
           </div>
         </div>
       </div>
@@ -110,6 +121,12 @@
                   :alt="server.map_name"
                   class="w-full h-full object-cover"
                 />
+                <!-- <img
+                  v-if="getCountryFlagUrl(server.host_name)"
+                  :src="getCountryFlagUrl(server.host_name)!"
+                  :alt="server.host_name.substring(1, 3) + ' flag'"
+                  class="absolute top-2 left-2 w-8 h-auto rounded shadow-md"
+                /> -->
                 <div class="absolute top-2 right-2 flex items-center px-3 py-1 rounded-full shadow-2xl shadow-black cursor-pointer hover:opacity-80 transition-opacity"
                      @click="openPlayerModal(server)" 
                      :class="{
@@ -122,7 +139,13 @@
                   <UserGroupIcon class="w-5 h-5 mr-1" />
                   <span class="font-bold">{{ server.total_players }}/{{ server.max_players }}</span>
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 flex flex-row items-center gap-2">
+                  <img
+                  v-if="getCountryFlagUrl(server.host_name)"
+                  :src="getCountryFlagUrl(server.host_name)!"
+                  :alt="server.host_name.substring(1, 3) + ' flag'"
+                  class="w-8 h-5 rounded shadow-md"
+                />
                   <h2 class="text-xl font-bold">{{ server.host_name }}</h2>
                 </div>
               </div>
@@ -195,6 +218,12 @@ const isLoading = ref(true)
 const showOnlyWithPlayers = ref(false)
 const showPlayerModal = ref(false)
 const selectedServerForModal = ref<Server | null>(null)
+const selectedCountry = ref<string>('all')
+
+interface CountryOption {
+  value: string;
+  label: string;
+}
 
 const gameModes: GameModeOption[] = [
   { value: 'all', label: 'All' },
@@ -208,13 +237,38 @@ const gameModes: GameModeOption[] = [
   { value: 'tdm', label: 'Team Deathmatch' }
 ]
 
+const availableCountries = computed<CountryOption[]>(() => {
+  const countryCounts: Record<string, number> = {};
+  servers.value.forEach(server => {
+    const match = server.host_name.match(/\[([A-Z]{2})\]/);
+    if (match && match[1]) {
+      const countryCode = match[1];
+      countryCounts[countryCode] = (countryCounts[countryCode] || 0) + 1;
+    }
+  });
+
+  const countries: CountryOption[] = Object.entries(countryCounts)
+    .map(([code, count]) => ({
+      value: code,
+      label: `${code} (${count})`
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label)); // Sort alphabetically by label
+
+  return [{ value: 'all', label: t('serverList.filter.allCountries') }, ...countries];
+});
+
 const filteredServers = computed(() => {
   return servers.value.filter(server => {
     const matchesSearch = server.host_name.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
                          server.description.toLowerCase().includes(searchQuery.value.toLowerCase())
     const matchesMode = selectedMode.value === 'all' || server.game_mode === selectedMode.value
     const matchesPlayers = !showOnlyWithPlayers.value || server.total_players > 0
-    return matchesSearch && matchesMode && matchesPlayers
+    
+    const countryMatch = server.host_name.match(/\[([A-Z]{2})\]/);
+    const serverCountryCode = countryMatch && countryMatch[1] ? countryMatch[1] : null;
+    const matchesCountry = selectedCountry.value === 'all' || serverCountryCode === selectedCountry.value;
+
+    return matchesSearch && matchesMode && matchesPlayers && matchesCountry;
   })
 })
 
@@ -246,6 +300,16 @@ const copyConnectCommand = async (server: Server): Promise<void> => {
     console.error('复制失败:', err)
   }
 }
+
+const getCountryFlagUrl = (hostName: string): string | null => {
+  // 举例：匹配[RO] mv's awesome Attrition server中的RO
+  const match = hostName.match(/\[([A-Z]{2})\]/);
+  if (match && match[1]) {
+    const countryCode = match[1].toLowerCase();
+    return `https://flagcdn.com/w40/${countryCode}.png`;
+  }
+  return null;
+};
 
 const serverCount = computed(() => {
   return filteredServers.value.length

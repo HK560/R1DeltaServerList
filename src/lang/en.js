@@ -15,7 +15,8 @@ export default {
       mfdp: 'Marked for Death Pro',
       ps: 'Pilot Skirmish',
       tdm: 'Team Deathmatch',
-      onlyWithPlayers: 'Has Players'
+      onlyWithPlayers: 'Has Players',
+      allCountries: 'All Countries'
     },
     map:{
         mp_airbase: 'AirBase',
