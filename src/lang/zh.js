@@ -3,7 +3,7 @@ export default {
     title: 'R1Delta 服务器列表',
     search: '搜索服务器...',
     filter: {
-      all: '全部',
+      all: '全部模式',
       at: '消耗战',
       campaign: '战役',
       coop: '边境防御',
@@ -11,7 +11,8 @@ export default {
       lts: '泰坦殊死战',
       mfdp: '标记死亡',
       ps: '铁驭对铁驭',
-      tdm: '团队死斗'
+      tdm: '团队死斗',
+      onlyWithPlayers: '有玩家'
     },
     map:{
         mp_airbase: '空军基地',

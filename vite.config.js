@@ -16,7 +16,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/r1d-api': {
-        target: 'https://ms.r1delta.net',
+        target: 'http://r1dms.elbadaernu.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/r1d-api/, '')
       }

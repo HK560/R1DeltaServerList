@@ -3,7 +3,7 @@ export default {
     title: 'R1Delta Server List',
     search: 'Search servers...',
     filter: {
-      all: 'All',
+      all: 'All Game Modes',
       at: 'Attrition',
       campaign: 'Campaign',
       coop: 'Frontier Defense',
@@ -11,7 +11,8 @@ export default {
       lts: 'Last Titan Standing',
       mfdp: 'Marked for Death Pro',
       ps: 'Pilot Skirmish',
-      tdm: 'Team Deathmatch'
+      tdm: 'Team Deathmatch',
+      onlyWithPlayers: 'Has Players'
     },
     map:{
         mp_airbase: 'AirBase',

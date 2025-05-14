@@ -46,20 +46,34 @@
               class="w-full px-4 py-2 rounded-lg bg-titanfall-secondary border border-gray-700 focus:border-titanfall-accent focus:outline-none"
             />
           </div>
-          <div class="flex gap-2">
-            <button
-              v-for="mode in gameModes"
-              :key="mode.value"
-              @click="selectedMode = mode.value"
-              :class="[
-                'px-4 py-2 rounded-lg transition-colors',
-                selectedMode === mode.value
-                  ? 'bg-titanfall-accent text-white'
-                  : 'bg-titanfall-secondary hover:bg-gray-700'
-              ]"
+          <div class="flex gap-4 items-center">
+            <label class="flex items-center group cursor-pointer">
+              <div class="relative">
+                <input
+                  type="checkbox"
+                  v-model="showOnlyWithPlayers"
+                  class="peer sr-only"
+                />
+                <div class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:bg-titanfall-accent transition-colors duration-200 ease-in-out"></div>
+                <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full peer-checked:translate-x-5 transition-transform duration-200 ease-in-out"></div>
+              </div>
+              <span class="ml-3 text-sm text-gray-300 group-hover:text-white transition-colors duration-200 select-none">
+                {{ t('serverList.filter.onlyWithPlayers') }}
+              </span>
+            </label>
+            <select
+              v-model="selectedMode"
+              class="px-4 py-2 rounded-lg bg-titanfall-secondary border border-gray-700 text-white focus:border-titanfall-accent focus:outline-none transition-colors duration-200"
             >
-              {{ t(`serverList.filter.${mode.value}`) }}
-            </button>
+              <option
+                v-for="mode in gameModes"
+                :key="mode.value"
+                :value="mode.value"
+                class="bg-gray-800 text-white"
+              >
+                {{ t(`serverList.filter.${mode.value}`) }}
+              </option>
+            </select>
           </div>
         </div>
       </div>
@@ -157,6 +171,7 @@ const searchQuery = ref('')
 const selectedMode = ref<GameMode>('all')
 const copiedServer = ref('')
 const isLoading = ref(true)
+const showOnlyWithPlayers = ref(false)
 
 const gameModes: GameModeOption[] = [
   { value: 'all', label: 'All' },
@@ -175,7 +190,8 @@ const filteredServers = computed(() => {
     const matchesSearch = server.host_name.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
                          server.description.toLowerCase().includes(searchQuery.value.toLowerCase())
     const matchesMode = selectedMode.value === 'all' || server.game_mode === selectedMode.value
-    return matchesSearch && matchesMode
+    const matchesPlayers = !showOnlyWithPlayers.value || server.total_players > 0
+    return matchesSearch && matchesMode && matchesPlayers
   })
 })
 
