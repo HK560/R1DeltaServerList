@@ -6,7 +6,9 @@
           <h1 class="text-3xl font-bold text-titanfall-highlight flex items-center gap-3">
             <img src="/image/icon.png" alt="Site Icon" class="w-12 h-12" />
             {{ t('serverList.title') }}
+
           </h1>
+
           <div class="flex gap-2">
             <button
               @click="locale = 'zh'"
@@ -38,6 +40,16 @@
     <main class="container mx-auto px-4 py-8 flex-grow">
       <div class="mb-8">
         <div class="flex flex-col md:flex-row gap-4">
+          <div class=" text-white min-w-[3rem]">
+            <div class="flex items-center gap-2">
+              <ServerStackIcon class="w-5 h-5" />
+              <span class="text-sm text-gray-300">{{ serverCount }}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <UserGroupIcon class="w-5 h-5" />
+              <span class="text-sm text-gray-300">{{ playerCount }}</span>
+            </div>
+          </div>
           <div class="flex-1">
             <input
               v-model="searchQuery"
@@ -162,7 +174,7 @@ import axios from 'axios'
 import type { Server, GameMode, GameModeOption } from './types'
 import { mapImageMapping } from './data/data'
 import Footer from './components/Footer.vue'
-import { UserGroupIcon } from '@heroicons/vue/24/solid'
+import { UserGroupIcon, ServerStackIcon } from '@heroicons/vue/24/solid'
 
 const { t, locale } = useI18n()
 
@@ -224,9 +236,16 @@ const copyConnectCommand = async (server: Server): Promise<void> => {
   }
 }
 
+const serverCount = computed(() => {
+  return filteredServers.value.length
+})
+
+const playerCount = computed(() => {
+  return filteredServers.value.reduce((sum, server) => sum + server.total_players, 0)
+})
+
 onMounted(() => {
   fetchServers()
-  // 每1分钟更新一次服务器列表
   setInterval(fetchServers, 60000)
 })
 </script>
@@ -236,7 +255,6 @@ onMounted(() => {
 @tailwind components;
 @tailwind utilities;
 
-/* 自定义滚动条样式 */
 .overflow-y-auto::-webkit-scrollbar {
   width: 6px;
 }
