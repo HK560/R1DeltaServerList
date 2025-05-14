@@ -40,17 +40,18 @@
     <main class="container mx-auto px-4 py-8 flex-grow">
       <div class="mb-8">
         <div class="flex flex-col md:flex-row gap-4">
-          <div class=" text-white min-w-[3rem]">
-            <div class="flex items-center gap-2">
-              <ServerStackIcon class="w-5 h-5" />
-              <span class="text-sm text-gray-300">{{ serverCount }}</span>
+
+          <div class="flex flex-1 flex-row gap-2" >
+            <div class=" text-white min-w-[3rem]">
+              <div class="flex items-center gap-2">
+                <ServerStackIcon class="w-5 h-5" />
+                <span class="text-sm text-gray-300">{{ serverCount }}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <UserGroupIcon class="w-5 h-5" />
+                <span class="text-sm text-gray-300">{{ playerCount }}</span>
+              </div>
             </div>
-            <div class="flex items-center gap-2">
-              <UserGroupIcon class="w-5 h-5" />
-              <span class="text-sm text-gray-300">{{ playerCount }}</span>
-            </div>
-          </div>
-          <div class="flex-1">
             <input
               v-model="searchQuery"
               type="text"
