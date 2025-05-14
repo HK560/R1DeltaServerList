@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-titanfall-primary text-white flex flex-col bg-cover bg-center bg-no-repeat bg-fixed" >
     <header class="bg-titanfall-secondary shadow-lg">
-      <div class="container mx-auto px-6 py-6">
+      <div class="container mx-auto px-6 py-3">
         <div class="flex justify-between items-center">
           <h1 class="text-xl md:text-3xl font-bold text-titanfall-highlight flex items-center gap-3 ">
             <img src="/image/icon.png" alt="Site Icon" class="w-12 h-12 shadow-2xl" />
