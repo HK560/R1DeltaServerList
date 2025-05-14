@@ -59,5 +59,15 @@ export default {
     message: {
       nodescription: 'No description'
     }
+  },
+  playerList:{
+    teamA: 'IMC',
+    teamB: 'Militia',
+    teamC: 'Team C',
+    title: 'Player List',
+    gen: 'G',
+    lvl: 'Lvl',
+    noPlayers: 'No players',
+    close: 'Close'
   }
 }

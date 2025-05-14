@@ -8,11 +8,20 @@ export interface Server {
   total_players: number;
   max_players: number;
   version: string;
+  players: Player[];
+  validated: boolean;
 }
 
-export type GameMode = 'all' | 'at' | 'campaign' | 'coop' | 'ctf' | 'lts' | 'mfdp' | 'ps' | 'tdm';
+export type GameMode = 'all' | 'at' | 'campaign' | 'coop' | 'ctf' | 'lts' | 'mfdp' | 'ps' | 'tdm' | 'cp';
 
 export interface GameModeOption {
   value: GameMode;
   label: string;
+}
+
+export interface Player {
+  name: string;
+  gen: number;
+  lvl: number;
+  team: number;
 } 

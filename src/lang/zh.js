@@ -59,5 +59,16 @@ export default {
     message: {
       nodescription: '此服务器无描述🫡'
     }
+  },
+  playerList:{
+    teamA: 'IMC',
+    teamB: '反抗军',
+    teamC: 'Team C',
+    title: '玩家列表',
+    gen: 'G',
+    lvl: 'Lvl',
+    noPlayers: '无玩家',
+    close: '关闭'
   }
+
 }

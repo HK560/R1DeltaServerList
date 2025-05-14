@@ -110,11 +110,14 @@
                   :alt="server.map_name"
                   class="w-full h-full object-cover"
                 />
-                <div class="absolute top-2 right-2 flex items-center px-3 py-1 rounded-full shadow-2xl shadow-black"
+                <div class="absolute top-2 right-2 flex items-center px-3 py-1 rounded-full shadow-2xl shadow-black cursor-pointer hover:opacity-80 transition-opacity"
+                     @click="openPlayerModal(server)" 
                      :class="{
                        'bg-gray-600': server.total_players === 0,
                        'bg-green-600': server.total_players > 0 && server.total_players < server.max_players,
-                       'bg-red-600': server.total_players === server.max_players
+                       'bg-red-600': server.total_players === server.max_players,
+                       'cursor-not-allowed opacity-60': !(server.players && server.players.length > 0) && server.total_players > 0,
+                       'pointer-events-none opacity-60': server.total_players === 0
                      }">
                   <UserGroupIcon class="w-5 h-5 mr-1" />
                   <span class="font-bold">{{ server.total_players }}/{{ server.max_players }}</span>
@@ -126,10 +129,6 @@
               
               <div class="p-6 space-y-4 flex-grow flex flex-col">
                 <div class="space-y-2">
-                  <!-- <p class="flex justify-between">
-                    <span class="text-gray-400">{{ t('serverList.status.players') }}:</span>
-                    <span>{{ server.total_players }}/{{ server.max_players }}</span>
-                  </p> -->
                   <p class="flex justify-between">
                     <span class="text-gray-400">{{ t('serverList.status.map') }}:</span>
                     <span>{{ t(`serverList.map.${server.map_name}`) }}</span>
@@ -166,6 +165,13 @@
       </Transition>
     </main>
     <Footer />
+
+    <PlayerListModal
+      v-if="showPlayerModal && selectedServerForModal"
+      :server="selectedServerForModal"
+      :visible="showPlayerModal" 
+      @close="closePlayerModal"
+    />
   </div>
 </template>
 
@@ -173,10 +179,11 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import axios from 'axios'
-import type { Server, GameMode, GameModeOption } from './types'
+import type { Server, GameMode, GameModeOption, Player } from './types'
 import { mapImageMapping } from './data/data'
 import Footer from './components/Footer.vue'
 import { UserGroupIcon, ServerStackIcon } from '@heroicons/vue/24/solid'
+import PlayerListModal from './components/PlayerListModal.vue'
 
 const { t, locale } = useI18n()
 
@@ -186,6 +193,8 @@ const selectedMode = ref<GameMode>('all')
 const copiedServer = ref('')
 const isLoading = ref(true)
 const showOnlyWithPlayers = ref(false)
+const showPlayerModal = ref(false)
+const selectedServerForModal = ref<Server | null>(null)
 
 const gameModes: GameModeOption[] = [
   { value: 'all', label: 'All' },
@@ -245,6 +254,19 @@ const serverCount = computed(() => {
 const playerCount = computed(() => {
   return filteredServers.value.reduce((sum, server) => sum + server.total_players, 0)
 })
+
+const openPlayerModal = (server: Server) => {
+  if (server.total_players > 0 && server.players && server.players.length > 0) {
+    selectedServerForModal.value = server
+    showPlayerModal.value = true
+  } else {
+    console.warn('No player data to display or server has no players.')
+  }
+}
+
+const closePlayerModal = () => {
+  showPlayerModal.value = false
+}
 
 onMounted(() => {
   fetchServers()
