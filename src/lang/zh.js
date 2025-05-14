@@ -5,11 +5,14 @@ export default {
     filter: {
       all: '全部模式',
       at: '消耗战',
+      cp: "据点争夺",
+      ctf: '夺旗',
       campaign: '战役',
       coop: '边境防御',
-      ctf: '夺旗',
+      scv: '击杀确认',
       lts: '泰坦殊死战',
-      mfdp: '标记死亡',
+      mfd: '标记死亡',
+      mfdp: '标记死亡Pro',
       ps: '铁驭对铁驭',
       tdm: '团队死斗',
       onlyWithPlayers: '有玩家'

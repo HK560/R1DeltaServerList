@@ -3,8 +3,8 @@
     <header class="bg-titanfall-secondary shadow-lg">
       <div class="container mx-auto px-4 py-6">
         <div class="flex justify-between items-center">
-          <h1 class="text-3xl font-bold text-titanfall-highlight flex items-center gap-3">
-            <img src="/image/icon.png" alt="Site Icon" class="w-12 h-12" />
+          <h1 class="text-3xl font-bold text-titanfall-highlight flex items-center gap-3 ">
+            <img src="/image/icon.png" alt="Site Icon" class="w-12 h-12 shadow-2xl" />
             {{ t('serverList.title') }}
 
           </h1>
@@ -109,7 +109,7 @@
                   :alt="server.map_name"
                   class="w-full h-full object-cover"
                 />
-                <div class="absolute top-2 right-2 flex items-center px-3 py-1 rounded-full shadow-lg"
+                <div class="absolute top-2 right-2 flex items-center px-3 py-1 rounded-full shadow-2xl shadow-black"
                      :class="{
                        'bg-gray-600': server.total_players === 0,
                        'bg-green-600': server.total_players > 0 && server.total_players < server.max_players,
