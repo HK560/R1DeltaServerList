@@ -1,19 +1,30 @@
 <template>
   <div class="min-h-screen bg-titanfall-primary text-white flex flex-col bg-cover bg-center bg-no-repeat bg-fixed" >
     <header class="bg-titanfall-secondary shadow-lg">
-      <div class="container mx-auto px-4 py-6">
+      <div class="container mx-auto px-6 py-6">
         <div class="flex justify-between items-center">
-          <h1 class="text-3xl font-bold text-titanfall-highlight flex items-center gap-3 ">
+          <h1 class="text-xl md:text-3xl font-bold text-titanfall-highlight flex items-center gap-3 ">
             <img src="/image/icon.png" alt="Site Icon" class="w-12 h-12 shadow-2xl" />
             {{ t('serverList.title') }}
 
           </h1>
 
-          <div class="flex gap-2">
+          <div class="flex flex-col md:flex-row gap-1">
+            <button
+            @click="locale = 'en'"
+            :class="[
+              'px-2 py-2 rounded-lg transition-colors text-sm md:text-base',
+              locale === 'en'
+                ? 'bg-titanfall-accent text-white'
+                : 'bg-titanfall-secondary hover:bg-gray-700'
+              ]"
+            >
+            ENG
+            </button>
             <button
               @click="locale = 'zh'"
               :class="[
-                'px-4 py-2 rounded-lg transition-colors',
+                'px-2 py-2 rounded-lg transition-colors text-sm md:text-base',
                 locale === 'zh'
                   ? 'bg-titanfall-accent text-white'
                   : 'bg-titanfall-secondary hover:bg-gray-700'
@@ -21,17 +32,7 @@
             >
               中文
             </button>
-            <button
-              @click="locale = 'en'"
-              :class="[
-                'px-4 py-2 rounded-lg transition-colors',
-                locale === 'en'
-                  ? 'bg-titanfall-accent text-white'
-                  : 'bg-titanfall-secondary hover:bg-gray-700'
-              ]"
-            >
-              English
-            </button>
+
           </div>
         </div>
       </div>
