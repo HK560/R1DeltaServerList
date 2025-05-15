@@ -7,6 +7,7 @@ export default {
       at: '消耗战',
       cp: "据点争夺",
       ctf: '夺旗',
+      ctfp: '夺旗Pro',
       campaign: '战役',
       coop: '边境防御',
       scv: '击杀确认',

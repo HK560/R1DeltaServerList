@@ -7,6 +7,7 @@ export default {
       at: 'Attrition',
       cp: 'Hardpoint Domination',
       ctf: 'Capture the Flag',
+      ctfp: 'Capture the Flag Pro',
       campaign: 'Campaign',
       coop: 'Frontier Defense',
       scv: 'Kill Confirmed',
