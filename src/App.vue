@@ -146,7 +146,7 @@
                   :alt="server.host_name.substring(1, 3) + ' flag'"
                   class="w-8 h-5 rounded shadow-md"
                 />
-                  <h2 class="text-xl font-bold">{{ server.host_name }}</h2>
+                  <h2 class="text-xl font-bold"><ColoredText :text="server.host_name" /></h2>
                 </div>
               </div>
               
@@ -207,6 +207,7 @@ import { mapImageMapping } from './data/data'
 import Footer from './components/Footer.vue'
 import { UserGroupIcon, ServerStackIcon } from '@heroicons/vue/24/solid'
 import PlayerListModal from './components/PlayerListModal.vue'
+import ColoredText from './components/ColoredText.vue'
 
 const { t, locale } = useI18n()
 
