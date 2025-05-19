@@ -179,7 +179,14 @@
                 </div>
                 
                 <div class="overflow-y-auto max-h-[80px] flex-grow border-t border-gray-700 py-2">
-                  <p class="text-sm text-gray-400">{{ server.description === "" ? t('serverList.message.nodescription') : server.description }}</p>
+                  <p class="text-sm text-gray-400">
+                    <template v-if="server.description === ''">
+                      {{ t('serverList.message.nodescription') }}
+                    </template>
+                    <template v-else>
+                      <ColoredText :text="server.description" />
+                    </template>
+                  </p>
                 </div>
               </div>
             </div>

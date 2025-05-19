@@ -1,7 +1,7 @@
 <template>
   <span>
     <template v-for="(part, index) in coloredParts" :key="index">
-      <span :style="{ color: part.color }">{{ part.text }}</span>
+      <span :style="part.color ? { color: part.color } : {}">{{ part.text }}</span>
     </template>
   </span>
 </template>
@@ -16,7 +16,7 @@ const props = defineProps<{
 const coloredParts = computed(() => {
   const parts = [];
   let currentText = props.text;
-  let currentColor = '#FFFFFF'; // Default color
+  let currentColor = null; // Default is null to inherit parent color
 
   while (currentText.length > 0) {
     const colorMatch = currentText.match(/\^([0-9A-F]{8})/i);
@@ -35,10 +35,12 @@ const coloredParts = computed(() => {
       currentText = currentText.substring(colorMatch.index! + colorMatch[0].length);
     } else {
       // No more color codes, add the remaining text
-      parts.push({
-        text: currentText,
-        color: currentColor
-      });
+      if (currentText.length > 0) {
+        parts.push({
+          text: currentText,
+          color: currentColor
+        });
+      }
       break;
     }
   }
