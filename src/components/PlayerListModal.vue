@@ -10,7 +10,7 @@
     >
       <header class="px-6 py-4 border-b border-gray-700 flex justify-between items-center flex-shrink-0">
         <h3 class="text-xl font-semibold text-titanfall-highlight truncate pr-4" :title="server.host_name">
-          {{ server.host_name }} - {{ t('playerList.title') }}
+          <ColoredText :text="server.host_name" /> - {{ t('playerList.title') }}
         </h3>
         <button @click="handleClose" class="text-gray-400 hover:text-white transition-colors p-1 rounded-full hover:bg-gray-700">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -63,6 +63,7 @@ import { defineProps, defineEmits, onUnmounted, ref, watch, computed } from 'vue
 import { useI18n } from 'vue-i18n';
 import type { Server, Player } from '../types'; // 确保路径正确
 import { UserGroupIcon } from '@heroicons/vue/24/solid'; // 用于无玩家时的图标
+import ColoredText from './ColoredText.vue'
 
 const props = defineProps<{
   server: Server;
